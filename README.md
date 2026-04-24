@@ -1,13 +1,15 @@
 <div align="center">
-  <img src="./assets/scientific_center_logo.png" height="60" alt="Scientific Center of Kuwait" />
+  <img src="assets/scientific_center_logo.png" height="60" alt="Scientific Center of Kuwait" />
   &nbsp;&nbsp;&nbsp;
-  <img src="./assets/ktech_logo_light.svg" height="52" alt="ktech" />
+  <img src="assets/ktech_logo_light.svg" height="52" alt="ktech" />
 </div>
 
 # 🌊 Ocean Quest — Student Project
 
 A simple animated ocean game where every fish was added by a different student.
 **No tools needed** — just a browser and a text editor.
+
+🌐 **Live demo**: [kuwait-technical-college.github.io/ktech_scientific_center](https://kuwait-technical-college.github.io/ktech_scientific_center/)
 
 ---
 
