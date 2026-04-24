@@ -1,0 +1,290 @@
+/* ============================================================
+   Ocean Quest — Styles
+   Deep ocean theme — no external libraries required
+============================================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ocean-deep:    #0a1628;
+  --ocean-mid:     #0d3b6e;
+  --ocean-surface: #1a6ea8;
+  --foam:          #a8d8ea;
+  --sand:          #c4a24a;
+  --accent:        #ff6b35;
+  --card-bg:       #f0f8ff;
+  --text-dark:     #1a2840;
+  --text-light:    #e8f4fd;
+  --text-muted:    #7eb8d4;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--ocean-deep);
+  color: var(--text-light);
+  min-height: 100vh;
+}
+
+/* ── HEADER ─────────────────────────────────────────────────── */
+
+header {
+  text-align: center;
+  padding: 2.5rem 1rem 2rem;
+  background: linear-gradient(180deg, #05101f 0%, var(--ocean-deep) 100%);
+}
+
+header h1 {
+  font-size: clamp(2rem, 6vw, 3.8rem);
+  letter-spacing: -0.02em;
+  color: var(--foam);
+  text-shadow: 0 2px 24px rgba(168, 216, 234, 0.45);
+}
+
+.header-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.logo-img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-ktech {
+  /* ktech SVG is light — keep it visible on the dark header */
+  filter: brightness(0) invert(1);
+  height: 44px;
+}
+
+header p {
+  margin-top: 0.6rem;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 1rem;
+  background: var(--ocean-surface);
+  color: white;
+  padding: 0.35rem 1.1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* ── OCEAN SECTION ──────────────────────────────────────────── */
+
+#ocean {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(26, 110, 168, 0.35) 0%,
+      rgba(13, 59, 110, 0.55) 50%,
+      rgba(10, 22, 40, 0.75)  100%
+    ),
+    url('bg.png') center center / cover no-repeat;
+  overflow: hidden;
+  border-top: 3px solid rgba(168, 216, 234, 0.25);
+  border-bottom: 3px solid rgba(168, 216, 234, 0.1);
+}
+
+/* Wavy surface shimmer */
+#ocean::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,255,255,0.12) 0px,
+    rgba(255,255,255,0.04) 20px,
+    rgba(255,255,255,0.12) 40px
+  );
+}
+
+/* Sandy ocean floor */
+#ocean::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  background: linear-gradient(180deg, transparent, rgba(196, 162, 74, 0.35));
+  pointer-events: none;
+}
+
+/* ── FISH ───────────────────────────────────────────────────── */
+
+.fish {
+  position: absolute;
+  width: 72px;
+  height: 48px;
+  cursor: pointer;
+  /* SVG fish faces LEFT natively, so we flip it to face RIGHT for rightward swimming */
+  transform: scaleX(-1);
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
+  transition: filter 0.2s, transform 0.2s;
+  /* animation-name, duration, and delay are set inline by app.js */
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.fish:hover {
+  filter: drop-shadow(0 4px 14px rgba(255, 255, 255, 0.5)) brightness(1.2);
+  transform: scaleX(-1) scale(1.3);
+  z-index: 10;
+}
+
+.fish svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Fish swimming left → right (default, faces right via scaleX(-1)) */
+@keyframes swimRight {
+  0%   { left: -90px; }
+  100% { left: calc(100% + 90px); }
+}
+
+/* Fish swimming right → left — reset flip so it faces left naturally */
+@keyframes swimLeft {
+  0%   { left: calc(100% + 90px); }
+  100% { left: -90px; }
+}
+
+.fish.swim-left {
+  animation-name: swimLeft;
+  transform: none;  /* SVG faces left natively — no flip needed */
+}
+
+.fish.swim-left:hover {
+  transform: scale(1.3);
+}
+
+/* ── GALLERY ────────────────────────────────────────────────── */
+
+#gallery {
+  padding: 3.5rem 1.5rem 4rem;
+  background: linear-gradient(180deg, var(--ocean-deep) 0%, #060f1c 100%);
+}
+
+#gallery h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--foam);
+  margin-bottom: 0.5rem;
+}
+
+.gallery-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.fish-card {
+  background: var(--card-bg);
+  color: var(--text-dark);
+  border-radius: 18px;
+  padding: 1.5rem 1rem 1.2rem;
+  text-align: center;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.fish-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.6);
+}
+
+.fish-avatar {
+  width: 96px;
+  height: 64px;
+  margin: 0 auto 0.9rem;
+}
+
+.fish-avatar svg {
+  width: 100%;
+  height: 100%;
+}
+
+.fish-card h3 {
+  font-size: 1.15rem;
+  color: var(--text-dark);
+  margin-bottom: 0.4rem;
+}
+
+.fish-card p {
+  font-size: 0.84rem;
+  color: #4a6a80;
+  line-height: 1.45;
+}
+
+/* ── FOOTER ─────────────────────────────────────────────────── */
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #040d1a;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+footer strong {
+  color: var(--foam);
+}
+
+.footer-hint {
+  margin-top: 0.5rem;
+  opacity: 0.5;
+  font-size: 0.8rem;
+}
+
+footer code {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  font-size: 0.78rem;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  #ocean {
+    height: 220px;
+  }
+
+  .fish {
+    width: 54px;
+    height: 36px;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+}

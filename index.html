@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌊 Ocean Quest — Our Sea</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── HEADER ─────────────────────────────────────────────── -->
+  <header>
+    <div class="header-logos">
+      <img src="assets/scientific_center_logo.png" alt="Scientific Center of Kuwait" class="logo-img" />
+      <img src="assets/ktech_logo_light.svg" alt="ktech" class="logo-img logo-ktech" />
+    </div>
+    <h1>🌊 Ocean Quest</h1>
+    <p>A living sea built by students — one fish at a time</p>
+    <div id="fish-count" class="badge">Loading fish…</div>
+  </header>
+
+  <!-- ── OCEAN (animated fish swim here) ───────────────────── -->
+  <section id="ocean" aria-label="Ocean with swimming fish">
+    <!--
+      Fish are created and inserted here automatically by app.js.
+      You do NOT need to edit this section.
+    -->
+  </section>
+
+  <!-- ── GALLERY ────────────────────────────────────────────── -->
+  <section id="gallery">
+    <h2>🐠 Meet the Fish</h2>
+    <p class="gallery-subtitle">
+      Each fish was created by a student.<br>
+      Hover over a fish in the ocean above to read its name!
+    </p>
+    <div id="cards" class="cards-grid"></div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer>
+    <p>Built with 💙 by students at <strong>The Scientific Center of Kuwait</strong></p>
+    <p class="footer-hint">
+      Want your fish here? Follow the steps in <code>README.md</code>
+    </p>
+  </footer>
+
+  <!--
+    ⚠️  IMPORTANT SCRIPT ORDER:
+    fish.js must come BEFORE app.js.
+    app.js reads fishCollection which is defined in fish.js.
+  -->
+  <script src="data/fish.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
