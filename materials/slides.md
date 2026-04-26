@@ -57,8 +57,8 @@ code {
 
 <div class="flex flex-col items-center text-center pt-6">
   <div class="flex items-center gap-8 mb-6">
-    <img src="/assets/scientific_center_logo.png" class="h-16" alt="Scientific Center of Kuwait logo" />
-    <img src="/assets/ktech_logo_light.svg" class="h-14" alt="ktech logo" />
+    <img src="/scientific_center_logo.png" class="h-16" alt="Scientific Center of Kuwait logo" />
+    <img src="/ktech_logo_light.svg" class="h-14" alt="ktech logo" />
   </div>
 
   <h1 class="!text-5xl !text-blue-900">🌊 Ocean Quest</h1>
@@ -124,7 +124,7 @@ transition: fade-out
 <v-click>
 
 ```
-ocean-quest/
+ktech_scientific_center/
 ├── index.html     ← the main page
 ├── style.css      ← colors and design
 ├── app.js         ← makes fish swim
@@ -479,7 +479,7 @@ layout: section
 > **Clone** → Download it locally
 > **Edit** → Add your fish
 > **Commit + Push** → Save and upload
-> **Pages** → Live on the internet!
+> **Pull Request** → Ask the instructor to merge your fish 🐠
 
 </v-click>
 
@@ -489,7 +489,7 @@ layout: section
 
 <v-clicks>
 
-1. Go to the class repo: **`https://github.com/[INSTRUCTOR]/ocean-quest`**
+1. Go to the class repo: **`https://github.com/Kuwait-Technical-College/ktech_scientific_center`**
 2. Click the **Fork** button (top-right corner)
 3. Keep all defaults on the "Create a new fork" screen
 4. Click **Create fork**
@@ -499,7 +499,7 @@ layout: section
 <v-click>
 
 You now have your own copy at:
-`https://github.com/YOUR-USERNAME/ocean-quest`
+`https://github.com/YOUR-USERNAME/ktech_scientific_center`
 
 </v-click>
 
@@ -525,8 +525,8 @@ You now have your own copy at:
 <v-click>
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/ocean-quest.git
-cd ocean-quest
+git clone https://github.com/YOUR-USERNAME/ktech_scientific_center.git
+cd ktech_scientific_center
 code .
 ```
 
@@ -730,7 +730,7 @@ Save: **Ctrl+S** (Win) / **Cmd+S** (Mac)
 - ❌ **Missing comma** between the last existing fish and your new one
 - ❌ **Extra comma** after your fish (the very last entry must NOT have one)
 - ❌ **Missing quotes** around text values
-- ❌ **Wrong field name** — must be `name`, `color`, `fact`, `speed` exactly
+- ❌ **Wrong field name** — must be `name`, `colors`, `fact`, `speed` exactly
 
 </v-clicks>
 
@@ -861,26 +861,23 @@ git push origin main
 
 ---
 
-# 4.4 — Enable GitHub Pages
+# 4.4 — Open a Pull Request
 
-Turn your repo into a live website:
+Send your fish to the class ocean:
 
 <v-clicks>
 
-1. Go to your fork: `https://github.com/YOUR-USERNAME/ocean-quest`
-2. Click the **Settings** tab
-3. In the left sidebar, click **Pages**
-4. Under **Branch**, select **main**
-5. Leave folder as `/ (root)`
-6. Click **Save**
+1. Go to your fork: `https://github.com/YOUR-USERNAME/ktech_scientific_center`
+2. Click the **"Contribute"** button → **"Open pull request"**
+3. Make sure it says: *base: Kuwait-Technical-College/ktech_scientific_center ← compare: YOUR-USERNAME/ktech_scientific_center*
+4. Title your PR: **"Add my fish: [your fish name]"**
+5. Click **Create pull request**
 
 </v-clicks>
 
 <v-click>
 
-You will see: *"Your site is being published at..."*
-
-Wait 1–2 minutes, then refresh the page.
+> 🐙 A Pull Request is how you say: *"Here's my change — please add it to the main project."* The instructor reviews and merges it.
 
 </v-click>
 
@@ -890,19 +887,19 @@ Wait 1–2 minutes, then refresh the page.
 
 <v-click>
 
-Open your URL:
+Once the instructor **approves and merges** your Pull Request, your fish appears at:
 
 ```
-https://YOUR-USERNAME.github.io/ocean-quest
+https://kuwait-technical-college.github.io/ktech_scientific_center/
 ```
 
 </v-click>
 
 <v-click>
 
-**Your animated fish is swimming live on the internet.**
+**Your fish is swimming with everyone else's — live on the internet.**
 
-Anyone in the world can open this link.
+You can also see it locally any time by opening `index.html` in your browser.
 
 </v-click>
 
@@ -910,8 +907,8 @@ Anyone in the world can open this link.
 
 **Checkpoint** 🧑‍💻
 
-Post your GitHub Pages URL in the chat right now!
-Let's collect everyone's oceans. 🌊
+Share your Pull Request link in the chat right now!
+Let's count how many fish are on their way. 🌊
 
 </v-click>
 
@@ -930,12 +927,12 @@ layout: section
 
 ```
 ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐
-│   FORK   │─▶│  CLONE   │─▶│   EDIT   │─▶│  COMMIT  │─▶│   PUSH   │─▶│  PAGES   │
+│   FORK   │─▶│  CLONE   │─▶│   EDIT   │─▶│  COMMIT  │─▶│   PUSH   │─▶│    PR    │
 │(GitHub)  │  │(terminal)│  │(VS Code +│  │  (Git)   │  │  (Git)   │  │(GitHub)  │
 │          │  │          │  │ Copilot) │  │          │  │          │  │          │
 └──────────┘  └──────────┘  └──────────┘  └──────────┘  └──────────┘  └──────────┘
- Your copy     Download       Change         Save a         Upload        🌐 Live!
- on GitHub     locally        the file       snapshot       to GitHub
+ Your copy     Download       Change         Save a         Upload       Request to
+ on GitHub     locally        the file       snapshot       to GitHub     merge 🌊
 ```
 
 ---
@@ -948,7 +945,7 @@ layout: section
 | **Terminal** | `cd`, `ls`/`dir`, `mkdir`, `git status`, `git diff` |
 | **AI / Copilot** | Asked AI to explain code and generate a fish entry |
 | **Git** | `git clone`, `git add`, `git commit`, `git push` |
-| **GitHub** | Forked a repo, enabled GitHub Pages, published live |
+| **GitHub** | Forked a repo, pushed changes, opened a Pull Request |
 | **Open Source** | Modified and published a real open-source project |
 
 ---
@@ -961,7 +958,7 @@ layout: section
 2. **Add a second fish**: Give it a completely different personality and color
 3. **Change the ocean background**: Find `#ocean` in `style.css`. Ask Copilot to change the gradient colors
 4. **Understand `app.js`**: Ask Copilot to explain `createFishSVG` line by line. Can you modify the fish shape?
-5. **Share your ocean**: Post your GitHub Pages link and challenge a friend to find your fish
+5. **Share your ocean**: Open `https://kuwait-technical-college.github.io/ktech_scientific_center/` after the instructor merges — find your fish!
 
 </v-clicks>
 
@@ -981,20 +978,20 @@ layout: section
 
 <div class="flex flex-col items-center text-center pt-8">
   <div class="flex items-center gap-6 mb-6">
-    <img src="/assets/scientific_center_logo.png" class="h-12" alt="Scientific Center of Kuwait logo" />
-    <img src="/assets/ktech_logo_light.svg" class="h-10" alt="ktech logo" />
+    <img src="/scientific_center_logo.png" class="h-12" alt="Scientific Center of Kuwait logo" />
+    <img src="/ktech_logo_light.svg" class="h-10" alt="ktech logo" />
   </div>
 
   <h1 class="!text-4xl !text-blue-900">You did it! 🎉</h1>
 
-  <p class="text-xl text-teal-600 font-semibold mt-3">Your fish is swimming live on the internet.</p>
+  <p class="text-xl text-teal-600 font-semibold mt-3">Your fish is swimming with everyone else's. 🌊</p>
 
   <p class="mt-4 opacity-60 max-w-xl">
     You used VS Code, ran terminal commands, used AI as a coding partner,
-    tracked your changes with Git, and published a real website on GitHub Pages.
+    tracked your changes with Git, and opened a real Pull Request.
     That is what real developers do — and now you have done it too.
   </p>
 
-  <p class="mt-6 text-lg font-semibold text-blue-800">Share your ocean! 🌊</p>
-  <p class="opacity-50 text-sm mt-1">https://YOUR-USERNAME.github.io/ocean-quest</p>
+  <p class="mt-6 text-lg font-semibold text-blue-800">See your fish live! 🐠</p>
+  <p class="opacity-50 text-sm mt-1">https://kuwait-technical-college.github.io/ktech_scientific_center/</p>
 </div>
